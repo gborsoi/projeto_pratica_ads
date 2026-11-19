@@ -1,0 +1,432 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 11 /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R 24 0 R 26 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3446 >>
+stream
+.08 .24 .20 rg 0 759 595 83 re f
+BT /F2 11 Tf .89 .96 .82 rg 1 0 0 1 44 808 Tm (Mercado Central  /  Relatório de testes V1) Tj ET
+BT /F2 15 Tf 1 1 1 rg 1 0 0 1 44 779 Tm (TST-001 · Login do operador) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 44 31 Tm (tst-001-login.md) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 507 31 Tm (P. 1) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 726 Tm (Caso de uso UC-001 — Realizar login) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 712 Tm (Origem Caso de teste de login fluxo principal.xlsx) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 687 Tm (Preparação do ambiente) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 661 Tm (Para evitar alterações nos dados da loja, inicie uma instância de testes com um arquivo) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 647 Tm (SQLite novo, em outra porta. Execute no PowerShell a partir da raiz do repositório:) Tj ET
+BT /F3 8 Tf .10 .19 .16 rg 1 0 0 1 44 626 Tm (env:MERCADO_DB = Join-Path \([System.IO.Path]::GetTempPath\(\)\) \("mercado-testes-" + [guid]::NewGuid\(\) +) Tj ET
+BT /F3 8 Tf .10 .19 .16 rg 1 0 0 1 44 612 Tm (".sqlite3"\)) Tj ET
+BT /F3 8 Tf .10 .19 .16 rg 1 0 0 1 44 598 Tm (py -3 app.py --port 8001) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 577 Tm (Abra http://127.0.0.1:8001 em uma janela privada ou em um perfil separado do navegador. No) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 563 Tm (primeiro acesso, crie o proprietário. Em Usuários › Novo usuário › Cadastrar usuário, crie) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 549 Tm (as contas fictícias operador.teste \(perfil Operador\) e gerente.teste \(perfil Gerente\), com) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 535 Tm (senhas de teste de pelo menos 10 caracteres.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 514 Tm (Para executar um cenário isoladamente, repita a preparação com um banco novo. Se reutilizar) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 500 Tm (a mesma base, use códigos exclusivos por cenário e encerre os turnos anteriores antes de) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 486 Tm (abrir um turno novo para o mesmo operador. Cadastre produtos pelos passos do TST-007, com os) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 472 Tm (dados de cada cenário.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 447 Tm (Passos e resultados esperados) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 421 Tm (1. Saia da sessão do proprietário pelo botão Sair. A tela Acesse sua conta deve aparecer.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 407 Tm (2. Em Usuário, informe operador.teste. Em Senha, informe a senha cadastrada para essa conta.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 393 Tm (Clique em Entrar.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 379 Tm (3. Confira que o sistema abre Visão geral, mostra o nome da conta e o perfil Operador. No) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 365 Tm (menu, confira PDV / Caixa e Minha conta. Os módulos Usuários e Configurações devem estar) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 351 Tm (indisponíveis para esse perfil.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 326 Tm (Registro da execução) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 300 Tm (• Status Executado) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 286 Tm (• Data e responsável 18/11 - Gustavo) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 272 Tm (• Resultado observado e evidências - Resultado positivo - Operações realizadas corretamente) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 2934 >>
+stream
+.08 .24 .20 rg 0 759 595 83 re f
+BT /F2 11 Tf .89 .96 .82 rg 1 0 0 1 44 808 Tm (Mercado Central  /  Relatório de testes V1) Tj ET
+BT /F2 15 Tf 1 1 1 rg 1 0 0 1 44 779 Tm (TST-002 · Venda com pagamento em crédito) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 44 31 Tm (tst-002-venda.md) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 507 31 Tm (P. 2) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 726 Tm (Caso de uso UC-002 — Realizar venda) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 712 Tm (Origem Caso de teste de Venda-1.xlsx) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 687 Tm (Pré-condições) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 661 Tm (• Use o ambiente descrito no TST-001.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 647 Tm (• Cadastre Arroz Venda a R 20,00 por unidade e Feijão Venda a R 10,00 por unidade. Atribua a) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 633 Tm (cada produto um SKU, um código de barras exclusivo e um lote com 10 unidades e validade) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 619 Tm (futura.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 605 Tm (• Entre como operador. Em PDV / Caixa, abra um turno com número livre e fundo de R 0,00.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 580 Tm (Passos e resultados esperados) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 554 Tm (1. Em Itens da venda, preencha Quantidade com 3 e informe o código do arroz em Produto por) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 540 Tm (código ou nome. Clique em Adicionar ou pressione Enter no campo de busca. Confira 3 unidades) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 526 Tm (e subtotal de R 60,00.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 512 Tm (2. Repita com 3 unidades de feijão. Confira o subtotal de R 30,00 e o total da venda de R) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 498 Tm (90,00.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 484 Tm (3. Em Forma de pagamento, selecione Crédito. Em ambiente de teste, marque Confirmei o) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 470 Tm (recebimento como simulação e clique em Concluir venda.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 456 Tm (4. Confira o Comprovante com a venda Concluída, pagamento Crédito, os dois itens e total de) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 442 Tm (R 90,00.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 428 Tm (5. Em outra sessão, entre como gerente e abra Estoque. Confira 7 unidades em cada lote e) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 414 Tm (duas movimentações de -3 vinculadas ao número da venda.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 389 Tm (Registro da execução) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 363 Tm (• Status Executado) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 349 Tm (• Data e responsável 18/11 - Gustavo) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 335 Tm (• Resultado observado e evidências - Resultado positivo - Operações realizadas corretamente) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 2151 >>
+stream
+.08 .24 .20 rg 0 759 595 83 re f
+BT /F2 11 Tf .89 .96 .82 rg 1 0 0 1 44 808 Tm (Mercado Central  /  Relatório de testes V1) Tj ET
+BT /F2 15 Tf 1 1 1 rg 1 0 0 1 44 779 Tm (TST-003 · Consulta de estoque) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 44 31 Tm (tst-003-consulta-de-estoque.md) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 507 31 Tm (P. 3) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 726 Tm (Caso de uso UC-003 — Consultar estoque) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 712 Tm (Origem Caso de teste de Consulta de Estoque.xlsx) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 687 Tm (Pré-condições) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 661 Tm (• Use o ambiente do TST-001 e entre como gerente.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 647 Tm (• Cadastre Arroz Consulta com estoque mínimo de 2 e um lote com validade futura e 8) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 633 Tm (unidades. Cadastre Feijão Consulta com estoque inicial de 0 e sem lote.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 608 Tm (Passos e resultados esperados) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 582 Tm (1. Abra Estoque no menu lateral. Na tabela Saldos por produto, localize Arroz Consulta pelo) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 568 Tm (nome. Em uma lista extensa, use a busca do navegador.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 554 Tm (2. Confira Físico e Disponível iguais a 8, Mínimo igual a 2 e situação Regular. Em Lotes,) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 540 Tm (confira o lote e seu saldo de 8.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 526 Tm (3. Localize Feijão Consulta na tabela de saldos. Confira Físico e Disponível iguais a 0 e) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 512 Tm (situação Em falta.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 487 Tm (Registro da execução) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 461 Tm (• Status Executado) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 447 Tm (• Data e responsável 18/11 - Gustavo) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 433 Tm (• Resultado observado e evidências - Resultado positivo - Operações realizadas corretamente) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 3112 >>
+stream
+.08 .24 .20 rg 0 759 595 83 re f
+BT /F2 11 Tf .89 .96 .82 rg 1 0 0 1 44 808 Tm (Mercado Central  /  Relatório de testes V1) Tj ET
+BT /F2 15 Tf 1 1 1 rg 1 0 0 1 44 779 Tm (TST-004 · Desconto percentual com autorização) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 44 31 Tm (tst-004-aplicacao-de-desconto.md) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 507 31 Tm (P. 4) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 726 Tm (Caso de uso UC-004 — Aplicar desconto) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 712 Tm (Origem Caso de teste de Aplicação de desconto.xlsx) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 687 Tm (Pré-condições) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 661 Tm (• Use o ambiente do TST-001. Em Configurações, confirme o limite de desconto sem autorização) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 647 Tm (de 5%.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 633 Tm (• Cadastre um produto de R 200,00 com pelo menos uma unidade em lote válido. Entre como) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 619 Tm (operador e abra um turno em PDV / Caixa. Tenha uma conta de gerente habilitada para) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 605 Tm (autorizar a operação.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 580 Tm (Passos e resultados esperados) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 554 Tm (1. Adicione uma unidade do produto. Confira o total inicial de R 200,00.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 540 Tm (2. Em Desconto na venda, informe 10 e selecione % em Tipo. O total exibido deve ser R) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 526 Tm (180,00.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 512 Tm (3. Selecione PIX, marque Confirmei o recebimento como simulação e clique em Concluir venda) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 498 Tm (sem preencher a autorização. O sistema deve solicitar credenciais gerenciais e manter a) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 484 Tm (venda sem registro.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 470 Tm (4. Clique em Voltar e revisar. Se o navegador tiver descartado o carrinho, monte a venda) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 456 Tm (novamente com os mesmos dados. Expanda Autorização gerencial e peça ao gerente de teste para) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 442 Tm (preencher Usuário do gerente e Senha de autorização.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 428 Tm (5. Confirme o pagamento simulado e clique em Concluir venda. O comprovante deve exibir) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 414 Tm (desconto de R 20,00 e total de R 180,00. Em Vendas do turno, deve haver apenas um novo) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 400 Tm (registro para o cenário.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 375 Tm (Registro da execução) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 349 Tm (• Status Executado) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 335 Tm (• Data e responsável 18/11 - Gustavo) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 321 Tm (• Resultado observado e evidências - Resultado positivo - Operações realizadas corretamente) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 2818 >>
+stream
+.08 .24 .20 rg 0 759 595 83 re f
+BT /F2 11 Tf .89 .96 .82 rg 1 0 0 1 44 808 Tm (Mercado Central  /  Relatório de testes V1) Tj ET
+BT /F2 15 Tf 1 1 1 rg 1 0 0 1 44 779 Tm (TST-005 · Cancelamento de venda concluída) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 44 31 Tm (tst-005-cancelamento-de-venda.md) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 507 31 Tm (P. 5) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 726 Tm (Caso de uso UC-005 — Cancelar venda) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 712 Tm (Origem Caso de teste de Cancelamento de Venda.xlsx) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 687 Tm (Pré-condições) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 661 Tm (• Use o ambiente do TST-001. Cadastre um produto de R 100,00 com 5 unidades em um único lote) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 647 Tm (válido.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 633 Tm (• Como operador, em um turno aberto, conclua uma venda de duas unidades por R 200,00 com PIX) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 619 Tm (confirmado em simulação. Anote o número da venda e mantenha o turno aberto. Confira com o) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 605 Tm (gerente que o saldo do lote caiu para 3.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 580 Tm (Passos e resultados esperados) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 554 Tm (1. No PDV / Caixa, localize a venda de R 200,00 em Vendas do turno pelo número anotado. Abra) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 540 Tm (seu comprovante.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 526 Tm (2. Em Cancelamento, expanda Estornar venda. Informe o motivo Cancelamento de teste e peça ao) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 512 Tm (gerente de teste para preencher as credenciais de autorização.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 498 Tm (3. Marque Confirmo o estorno dos itens e clique em Confirmar cancelamento.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 484 Tm (4. Confira que o comprovante e a lista do turno apresentam a venda como Cancelada. O) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 470 Tm (comprovante deve mostrar o motivo, o autorizador e o valor original de R 200,00.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 456 Tm (5. Como gerente, confira em Estoque que o mesmo lote voltou a 5 unidades e que o histórico) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 442 Tm (registra entrada de +2 vinculada ao estorno.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 417 Tm (Registro da execução) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 391 Tm (• Status Executado) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 377 Tm (• Data e responsável 18/11 - Gustavo) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 363 Tm (• Resultado observado e evidências - Resultado positivo - Operações realizadas corretamente) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 17 0 R >>
+endobj
+17 0 obj
+<< /Length 2873 >>
+stream
+.08 .24 .20 rg 0 759 595 83 re f
+BT /F2 11 Tf .89 .96 .82 rg 1 0 0 1 44 808 Tm (Mercado Central  /  Relatório de testes V1) Tj ET
+BT /F2 15 Tf 1 1 1 rg 1 0 0 1 44 779 Tm (TST-006 · Fechamento sem divergência) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 44 31 Tm (tst-006-fechamento-de-caixa.md) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 507 31 Tm (P. 6) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 726 Tm (Caso de uso UC-006 — Fechar caixa) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 712 Tm (Origem Caso de teste de Fechamento de Caixa.xlsx) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 687 Tm (Pré-condições) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 661 Tm (• Use o ambiente do TST-001. Cadastre um produto a R 50,00 com pelo menos 23 unidades) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 647 Tm (vendáveis.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 633 Tm (• Como operador, abra um turno novo com fundo de R 0,00. Registre quatro vendas em Dinheiro,) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 619 Tm (de 4, 10, 6 e 3 unidades, recebendo exatamente R 200,00, R 500,00, R 300,00 e R 150,00,) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 605 Tm (respectivamente. Confirme cada pagamento simulado. Deixe o carrinho vazio e mantenha o turno) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 591 Tm (aberto.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 566 Tm (Passos e resultados esperados) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 540 Tm (1. Em PDV / Caixa, abra Fechamento › Conferir valores do turno. Confira o esperado de R) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 526 Tm (1.150,00 em Dinheiro e R 0,00 nos cinco demais meios.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 512 Tm (2. Informe 1150,00 em Dinheiro e 0,00 em PIX, Débito, Crédito, Vale-alimentação e Vale-) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 498 Tm (refeição.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 484 Tm (3. Clique em Confirmar fechamento e confirme o diálogo do navegador.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 470 Tm (4. Na tela Conferência de caixa, confira R 1.150,00 nas colunas Esperado e Informado para) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 456 Tm (dinheiro e R 0,00 na coluna Diferença para todos os meios. Confira o horário de fechamento.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 442 Tm (5. Volte a PDV / Caixa. Deve aparecer Abertura de caixa, e o turno encerrado deve constar em) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 428 Tm (Turnos recentes.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 403 Tm (Registro da execução) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 377 Tm (• Status Executado) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 363 Tm (• Data e responsável 18/11 - Gustavo) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 349 Tm (• Resultado observado e evidências - Resultado positivo - Operações realizadas corretamente) Tj ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 19 0 R >>
+endobj
+19 0 obj
+<< /Length 2563 >>
+stream
+.08 .24 .20 rg 0 759 595 83 re f
+BT /F2 11 Tf .89 .96 .82 rg 1 0 0 1 44 808 Tm (Mercado Central  /  Relatório de testes V1) Tj ET
+BT /F2 15 Tf 1 1 1 rg 1 0 0 1 44 779 Tm (TST-007 · Cadastro de produto com lote inicial) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 44 31 Tm (tst-007-cadastro-de-produto.md) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 507 31 Tm (P. 7) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 726 Tm (Caso de uso UC-007 — Cadastrar produto) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 712 Tm (Origem Caso de teste de Cadastro de produto.xlsx) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 687 Tm (Pré-condições) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 661 Tm (Use o ambiente do TST-001 e entre como gerente. Escolha um SKU e um código de barras ainda) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 647 Tm (livres.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 622 Tm (Passos e resultados esperados) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 596 Tm (1. Abra Produtos › Cadastro › Novo produto.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 582 Tm (2. Preencha Nome com Arroz Cadastro, Código \(SKU\) com TST007-ARROZ e Código de barras com) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 568 Tm (2000000000074. Use Categoria Mercearia, Unidade un, Custo \(R\) 12,00, Preço de venda \(R\)) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 554 Tm (20,00 e Estoque mínimo 2.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 540 Tm (3. Mantenha Produto ativo marcado. Informe Estoque inicial 10, Lote inicial CAD-A e Validade) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 526 Tm (inicial com uma data futura, por exemplo 60 dias após a execução. Clique em Salvar.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 512 Tm (4. Em Catálogo, confira o produto com o SKU informado, categoria Mercearia, preço de R) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 498 Tm (20,00, saldo Disponível de 10 e situação Ativo.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 484 Tm (5. Em Estoque › Lotes, confira o lote CAD-A com a validade informada e saldo de 10. O) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 470 Tm (histórico deve ter uma entrada de +10 com motivo Estoque inicial.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 445 Tm (Registro da execução) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 419 Tm (• Status Executado) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 405 Tm (• Data e responsável 18/11 - Gustavo) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 391 Tm (• Resultado observado e evidências - Resultado positivo - Operações realizadas corretamente) Tj ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 21 0 R >>
+endobj
+21 0 obj
+<< /Length 2177 >>
+stream
+.08 .24 .20 rg 0 759 595 83 re f
+BT /F2 11 Tf .89 .96 .82 rg 1 0 0 1 44 808 Tm (Mercado Central  /  Relatório de testes V1) Tj ET
+BT /F2 15 Tf 1 1 1 rg 1 0 0 1 44 779 Tm (TST-008 · Saída de estoque por lote) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 44 31 Tm (tst-008-gerenciamento-de-estoque.md) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 507 31 Tm (P. 8) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 726 Tm (Caso de uso UC-008 — Gerenciar estoque) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 712 Tm (Origem Caso de teste de Gerenciado de produto.xlsx) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 687 Tm (Pré-condições) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 661 Tm (Use o ambiente do TST-001 e entre como gerente. Cadastre Feijão Ajuste com 10 unidades em um) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 647 Tm (único lote FEI-A, com validade futura.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 622 Tm (Passos e resultados esperados) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 596 Tm (1. Abra Estoque e confira que o saldo inicial do produto e do lote é 10.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 582 Tm (2. Em Movimentar estoque, escolha Saída / perda no campo Tipo e selecione Feijão Ajuste ·) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 568 Tm (FEI-A em Lote existente.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 554 Tm (3. Informe Quantidade 5 e Motivo Avaria de teste. Clique em Registrar ajuste.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 540 Tm (4. Confira saldos Físico e Disponível iguais a 5 para o produto, e saldo de 5 no lote.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 526 Tm (5. Em Movimentações recentes, confira o lançamento de -5, o lote FEI-A, o motivo informado e) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 512 Tm (o usuário gerente.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 487 Tm (Registro da execução) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 461 Tm (• Status Executado) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 447 Tm (• Data e responsável 18/11 - Gustavo) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 433 Tm (• Resultado observado e evidências - Resultado positivo - Operações realizadas corretamente) Tj ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 23 0 R >>
+endobj
+23 0 obj
+<< /Length 2525 >>
+stream
+.08 .24 .20 rg 0 759 595 83 re f
+BT /F2 11 Tf .89 .96 .82 rg 1 0 0 1 44 808 Tm (Mercado Central  /  Relatório de testes V1) Tj ET
+BT /F2 15 Tf 1 1 1 rg 1 0 0 1 44 779 Tm (TST-009 · Relatório de vendas e exportação em PDF) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 44 31 Tm (tst-009-relatorio.md) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 507 31 Tm (P. 9) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 726 Tm (Caso de uso UC-009 — Emitir relatório) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 712 Tm (Origem Caso de teste de Relatório.xlsx) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 687 Tm (Pré-condições) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 661 Tm (• Use o ambiente do TST-001. Cadastre um produto a R 150,00 com 10 unidades ou mais em lote) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 647 Tm (válido.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 633 Tm (• Como operador, registre no mesmo dia dez vendas concluídas de uma unidade, sem desconto ou) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 619 Tm (cancelamento. Use uma base em que essas sejam as únicas vendas do dia. Anote a data da) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 605 Tm (execução e depois entre como gerente.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 580 Tm (Passos e resultados esperados) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 554 Tm (1. Abra Relatórios. Preencha De e Até com a data registrada e clique em Filtrar. O período) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 540 Tm (usa a data real de registro das vendas.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 526 Tm (2. Confira Faturamento de R 1.500,00, Vendas concluídas igual a 10 e Ticket médio de R) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 512 Tm (150,00. Em Vendas e conciliação fiscal, confira as dez vendas de R 150,00.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 498 Tm (3. Clique em Imprimir / salvar PDF e selecione Salvar como PDF no diálogo do navegador.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 484 Tm (4. Abra o PDF salvo. Confira que os indicadores e as dez vendas do período aparecem no) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 470 Tm (documento.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 445 Tm (Registro da execução) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 419 Tm (• Status Executado) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 405 Tm (• Data e responsável 18/11 - Gustavo) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 391 Tm (• Resultado observado e evidências - Resultado positivo - Operações realizadas corretamente) Tj ET
+endstream
+endobj
+24 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 25 0 R >>
+endobj
+25 0 obj
+<< /Length 2054 >>
+stream
+.08 .24 .20 rg 0 759 595 83 re f
+BT /F2 11 Tf .89 .96 .82 rg 1 0 0 1 44 808 Tm (Mercado Central  /  Relatório de testes V1) Tj ET
+BT /F2 15 Tf 1 1 1 rg 1 0 0 1 44 779 Tm (TST-010 · Retorno ao sistema após encerrar a sessão) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 44 31 Tm (tst-010-login-apos-sair.md) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 507 31 Tm (P. 10) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 726 Tm (Caso de uso UC-001 — Realizar login) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 694 Tm (Pré-condições) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 668 Tm (Use o ambiente do TST-001. Entre como operador.teste e mantenha o mesmo navegador durante o) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 654 Tm (teste.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 629 Tm (Passos e resultados esperados) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 603 Tm (1. Em Visão geral, clique em Sair. Confira que o sistema apresenta Acesse sua conta.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 589 Tm (2. Digite diretamente http://127.0.0.1:8001/pdv na barra de endereços. O sistema deve) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 575 Tm (apresentar a tela de login e impedir acesso à operação do caixa.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 561 Tm (3. Informe novamente o usuário e a senha do operador e clique em Entrar. O sistema deve) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 547 Tm (abrir Visão geral com o perfil Operador.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 533 Tm (4. Clique em PDV / Caixa. O sistema deve apresentar a abertura de caixa ou o turno já) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 519 Tm (existente para a conta.) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 494 Tm (Registro da execução) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 468 Tm (• Status Executado) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 454 Tm (• Data e responsável 18/11 - Gustavo) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 440 Tm (• Resultado observado e evidências - Resultado positivo - Operações realizadas corretamente) Tj ET
+endstream
+endobj
+26 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 27 0 R >>
+endobj
+27 0 obj
+<< /Length 3414 >>
+stream
+.08 .24 .20 rg 0 759 595 83 re f
+BT /F2 11 Tf .89 .96 .82 rg 1 0 0 1 44 808 Tm (Mercado Central  /  Relatório de testes V1) Tj ET
+BT /F2 15 Tf 1 1 1 rg 1 0 0 1 44 779 Tm (Métricas dos Testes) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 44 31 Tm (metricas-dos-testes.md) Tj ET
+BT /F1 8 Tf .10 .19 .16 rg 1 0 0 1 507 31 Tm (P. 11) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 722 Tm (Contagem de cenários e testes) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 696 Tm (O escopo desta medição são os 10 cenários planejados para a suíte manual da V1,) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 682 Tm (identificados de TST-001 a TST-010. Eles estão vinculados a 9 casos de uso. O UC-001 tem) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 668 Tm (dois cenários, login inicial e login após sair.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 647 Tm (Na rodada de 18/11/2026, Gustavo registrou os 10 cenários como Executado, todos com) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 633 Tm (Resultado positivo. A contagem considera esses registros como sucesso.) Tj ET
+BT /F1 9 Tf .10 .19 .16 rg 1 0 0 1 44 612 Tm (Símbolo  |  Indicador  |  Total atual) Tj ET
+BT /F1 9 Tf .10 .19 .16 rg 1 0 0 1 44 598 Tm (R_ft  |  Cenários planejados para teste  |  10) Tj ET
+BT /F1 9 Tf .10 .19 .16 rg 1 0 0 1 44 584 Tm (T_i  |  Cenários com roteiro implementado em Markdown  |  10) Tj ET
+BT /F1 9 Tf .10 .19 .16 rg 1 0 0 1 44 570 Tm (T_x  |  Cenários executados com resultado de sucesso ou falha  |  10) Tj ET
+BT /F1 9 Tf .10 .19 .16 rg 1 0 0 1 44 556 Tm (T_s  |  Cenários executados com sucesso  |  10) Tj ET
+BT /F1 9 Tf .10 .19 .16 rg 1 0 0 1 44 542 Tm (T_f  |  Cenários executados com falha  |  0) Tj ET
+BT /F1 9 Tf .10 .19 .16 rg 1 0 0 1 44 528 Tm (T_n  |  Cenários não executados  |  0) Tj ET
+BT /F1 9 Tf .10 .19 .16 rg 1 0 0 1 44 514 Tm (T_c  |  Cenários com execução cancelada  |  0) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 489 Tm (Cobertura) Tj ET
+BT /F1 9 Tf .10 .19 .16 rg 1 0 0 1 44 463 Tm (Métrica  |  Fórmula  |  Resultado atual) Tj ET
+BT /F1 9 Tf .10 .19 .16 rg 1 0 0 1 44 449 Tm (Cobertura de testes implementados  |  \(T_i / R_ft\) × 100%  |  \(10 / 10\) × 100% = 100%) Tj ET
+BT /F1 9 Tf .10 .19 .16 rg 1 0 0 1 44 435 Tm (Cobertura de testes executados  |  \(T_x / R_ft\) × 100%  |  \(10 / 10\) × 100% = 100%) Tj ET
+BT /F1 9 Tf .10 .19 .16 rg 1 0 0 1 44 421 Tm (Cobertura de testes bem-sucedidos  |  \(T_s / R_ft\) × 100%  |  \(10 / 10\) × 100% = 100%) Tj ET
+BT /F1 9 Tf .10 .19 .16 rg 1 0 0 1 44 407 Tm (Taxa de sucesso entre os executados  |  \(T_s / T_x\) × 100%  |  \(10 / 10\) × 100% = 100%) Tj ET
+BT /F2 13 Tf .10 .19 .16 rg 1 0 0 1 44 382 Tm (Como atualizar) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 356 Tm (1. Registre o resultado de cada roteiro no campo Status, usando Sucesso, Falha, Não) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 342 Tm (executado ou Cancelado. Para cada ciclo, conte um status por cenário.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 328 Tm (2. Some os testes com sucesso e com falha para obter o total de executados \(T_x = T_s +) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 314 Tm (T_f\). Confira se T_i = T_x + T_n + T_c.) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 300 Tm (3. Recalcule os percentuais usando as fórmulas da tabela. Se o escopo mudar, atualize também) Tj ET
+BT /F1 10 Tf .10 .19 .16 rg 1 0 0 1 44 286 Tm (a quantidade de cenários planejados \(R_ft\).) Tj ET
+endstream
+endobj
+xref
+0 28
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000185 00000 n 
+0000000282 00000 n 
+0000000384 00000 n 
+0000000479 00000 n 
+0000000625 00000 n 
+0000004123 00000 n 
+0000004269 00000 n 
+0000007255 00000 n 
+0000007403 00000 n 
+0000009607 00000 n 
+0000009755 00000 n 
+0000012920 00000 n 
+0000013068 00000 n 
+0000015939 00000 n 
+0000016087 00000 n 
+0000019013 00000 n 
+0000019161 00000 n 
+0000021777 00000 n 
+0000021925 00000 n 
+0000024155 00000 n 
+0000024303 00000 n 
+0000026881 00000 n 
+0000027029 00000 n 
+0000029136 00000 n 
+0000029284 00000 n 
+trailer
+<< /Size 28 /Root 1 0 R >>
+startxref
+32751
+%%EOF
