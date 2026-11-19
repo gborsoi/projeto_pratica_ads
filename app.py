@@ -3,6 +3,7 @@ import hmac
 import sqlite3
 import time
 from contextlib import closing
+from getpass import getpass
 from http.cookies import SimpleCookie, CookieError
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -17,7 +18,10 @@ ROOT = Path(__file__).resolve().parent
 ASSETS = {"style.css": "text/css", "app.js": "text/javascript"}
 
 
-class Handler(BaseHTTPRequestHandler):
+class ApplicationRequest:
+    allow_setup = True
+    secure_cookies = False
+
     def cookie(self, name):
         try:
             value = SimpleCookie(self.headers.get("Cookie", "")).get(name)
@@ -32,21 +36,22 @@ class Handler(BaseHTTPRequestHandler):
 
     def respond(self, status, body=b"", mime="text/html", location="", cookies=()):
         content = body.encode() if isinstance(body, str) else body
-        self.send_response(status)
-        self.send_header("Content-Type", f"{mime}; charset=utf-8")
-        self.send_header("Content-Length", str(len(content)))
-        self.send_header("Cache-Control", "no-store")
-        self.send_header("X-Content-Type-Options", "nosniff")
-        self.send_header("Content-Security-Policy", "default-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'")
+        headers = [
+            ("Content-Type", f"{mime}; charset=utf-8"),
+            ("Cache-Control", "no-store"),
+            ("X-Content-Type-Options", "nosniff"),
+            ("Content-Security-Policy", "default-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"),
+        ]
+        if status != 204:
+            headers.append(("Content-Length", str(len(content))))
         if location:
-            self.send_header("Location", "/" + location)
+            headers.append(("Location", "/" + location))
         for cookie in cookies:
-            self.send_header("Set-Cookie", cookie)
-        self.end_headers()
-        self.wfile.write(content)
+            headers.append(("Set-Cookie", cookie + ("; Secure" if self.secure_cookies else "")))
+        self.send_application_response(status, headers, content)
 
     def auth_page(self, db, csrf, error=""):
-        first = not db.execute("SELECT 1 FROM users LIMIT 1").fetchone()
+        first = self.allow_setup and not db.execute("SELECT 1 FROM users LIMIT 1").fetchone()
         self.respond(400 if error else 200, login_page(csrf, error, first), cookies=(
             f"csrf={csrf}; Path=/; HttpOnly; SameSite=Strict",))
 
@@ -105,13 +110,10 @@ class Handler(BaseHTTPRequestHandler):
                     cookies = ()
                     if action in ("setup", "login"):
                         if action == "setup":
-                            if db.execute("SELECT 1 FROM users LIMIT 1").fetchone():
-                                raise ValueError("O proprietário inicial já está cadastrado.")
-                            password = data.get("password", "")
-                            if len(password) < 10:
-                                raise ValueError("Use uma senha com pelo menos 10 caracteres.")
-                            db.execute("INSERT INTO users(name,login,password,role) VALUES (?,?,?,'owner')",
-                                       (required(data, "name"), required(data, "login"), password_hash(password)))
+                            if not self.allow_setup:
+                                self.respond(403, "O proprietário inicial deve ser criado pelo terminal.")
+                                return
+                            create_owner(db, data)
                         token = login(db, data)
                         destination = "home"
                         cookies = (f"sid={token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=43200",)
@@ -139,12 +141,48 @@ class Handler(BaseHTTPRequestHandler):
                     self.auth_page(db, csrf, message)
 
 
+class Handler(ApplicationRequest, BaseHTTPRequestHandler):
+    def send_application_response(self, status, headers, body):
+        self.send_response(status)
+        for name, value in headers:
+            self.send_header(name, value)
+        self.end_headers()
+        self.wfile.write(body)
+
+
+def initialize_database():
+    with closing(connect()) as db:
+        db.executescript(SCHEMA)
+
+
+def create_owner(db, data):
+    if db.execute("SELECT 1 FROM users LIMIT 1").fetchone():
+        raise ValueError("O proprietário inicial já está cadastrado.")
+    password = data.get("password", "")
+    if len(password) < 10:
+        raise ValueError("Use uma senha com pelo menos 10 caracteres.")
+    db.execute("INSERT INTO users(name,login,password,role) VALUES (?,?,?,'owner')",
+               (required(data, "name"), required(data, "login"), password_hash(password)))
+
+
 def main():
     parser = argparse.ArgumentParser(description="Sistema local de gestão de supermercado")
     parser.add_argument("--port", type=int, default=8000)
+    parser.add_argument("--init-owner", action="store_true", help="Cria o primeiro proprietário pelo terminal")
     args = parser.parse_args()
-    with closing(connect()) as db:
-        db.executescript(SCHEMA)
+    initialize_database()
+    if args.init_owner:
+        data = {"name": input("Nome: "), "login": input("Usuário: "), "password": getpass("Senha: ")}
+        if data["password"] != getpass("Confirme a senha: "):
+            parser.exit(1, "As senhas devem ser iguais.\n")
+        try:
+            with closing(connect()) as db, db:
+                db.execute("BEGIN IMMEDIATE")
+                create_owner(db, data)
+        except ValueError as error:
+            parser.exit(1, f"{error}\n")
+        print("Proprietário inicial cadastrado.")
+        return
     with ThreadingHTTPServer(("127.0.0.1", args.port), Handler) as server:
         print(f"Mercado Central disponível em http://127.0.0.1:{args.port}", flush=True)
         try:

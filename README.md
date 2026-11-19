@@ -17,6 +17,29 @@ Sistema web local de gestão para pequenos supermercados. A especificação orie
 
 O banco `mercado.sqlite3` é criado na primeira execução. A variável de ambiente `MERCADO_DB` permite escolher outro caminho gravável. Encerre o servidor para fazer uma cópia do banco em repouso.
 
+## Hospedar no PythonAnywhere
+
+Use uma base de demonstração com dados fictícios. No console Bash, entre na pasta que contém `app.py` e execute com a mesma versão de Python (3.11 ou superior) escolhida na aba **Web**:
+
+```bash
+mkdir -p "$HOME/mercado-dados"
+MERCADO_DB="$HOME/mercado-dados/demonstracao.sqlite3" python3.13 app.py --init-owner
+```
+
+O comando cria o banco e solicita os dados do primeiro proprietário. Escolha uma senha exclusiva. Na aba **Web**, crie uma aplicação com **Manual configuration** e abra o arquivo WSGI indicado no painel. Ajuste os dois caminhos abaixo para o nome da sua conta e a pasta do código:
+
+```python
+import os
+import sys
+
+os.environ["MERCADO_DB"] = "/home/SEU_USUARIO/mercado-dados/demonstracao.sqlite3"
+sys.path.insert(0, "/home/SEU_USUARIO/projeto_pratica_ads")
+
+from wsgi import application
+```
+
+Ative **Force HTTPS**, clique em **Reload** e abra o endereço HTTPS mostrado no painel. Confira o login do proprietário e crie os acessos de gerente e operador para a avaliação. A criação inicial do proprietário pelo navegador está disponível na execução local. Na hospedagem, use o comando do console antes de compartilhar o link.
+
 ## Fluxos disponíveis
 
 - **Caixa:** abertura com fundo, leitura de código de barras como entrada de teclado, busca manual, descontos, confirmação de pagamento, troco, comprovante e fechamento por meio de pagamento.
